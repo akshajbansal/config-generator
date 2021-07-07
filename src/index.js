@@ -1557,9 +1557,9 @@ class App extends Component {
                     href={this.state.fileDownloadUrl}
                     ref={e=>this.dofileDownload = e}
                 >
+                </a>
                 <p>(The downloaded file might contain errors. Better download the file by clicking Submit button.)</p>
                 <br></br>
-                </a>
             </div>
             </Paper></Box></div>
         </div>
