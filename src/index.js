@@ -159,7 +159,6 @@ const schema = {
           "$id": "#/properties/hostname",
           "type": "string",
           "title": "Host name",
-          "minLength": 3,
           "description": "The fully qualified name of the load balancer",
           "default": "",
           "examples": [
@@ -255,9 +254,9 @@ const schema = {
           "type": "boolean",
           "title": "High Availability",
           "description": "Sets the High Availability mode of the installer. When ha is set to true (String, not boolean), then all the services will be deployed with a High Availability setting. When set to false, single pods per service will be deployed.",
-          "default": "",
+          "default": false,
           "examples": [
-              "false"
+              false
           ]
       },
       "gpu_support": {
@@ -265,9 +264,9 @@ const schema = {
           "type": "boolean",
           "title": "GPU Support",
           "description": "GPU support toggle, indicating if GPU support is required",
-          "default": "",
+          "default": false,
           "examples": [
-              "false"
+              false
           ]
       },
       "rke_token": {
@@ -313,10 +312,10 @@ const schema = {
                   }
               }
           ],
-          "required": [
-              "host",
-              "identity"
-          ],
+        //   "required": [
+        //       "host",
+        //       "identity"
+        //   ],
           "properties": {
               "host": {
                   "$id": "#/properties/certificate/properties/host",
@@ -331,11 +330,11 @@ const schema = {
                           "key_file_path": "PLACEHOLDER"
                       }
                   ],
-                  "required": [
-                      "ca_file_path",
-                      "tls_file_path",
-                      "key_file_path"
-                  ],
+                //   "required": [
+                //       "ca_file_path",
+                //       "tls_file_path",
+                //       "key_file_path"
+                //   ],
                   "properties": {
                       "ca_file_path": {
                           "$id": "#/properties/certificate/properties/host/properties/ca_file_path",
@@ -385,14 +384,14 @@ const schema = {
                           "saml_future_signing_cert_pass": "PLACEHOLDER"
                       }
                   ],
-                  "required": [
-                      "token_signing_cert_file",
-                      "token_signing_cert_pass",
-                      "saml_current_signing_cert_file",
-                      "saml_current_signing_cert_pass",
-                      "saml_future_signing_cert_file",
-                      "saml_future_signing_cert_pass"
-                  ],
+                //   "required": [
+                //       "token_signing_cert_file",
+                //       "token_signing_cert_pass",
+                //       "saml_current_signing_cert_file",
+                //       "saml_current_signing_cert_pass",
+                //       "saml_future_signing_cert_file",
+                //       "saml_future_signing_cert_pass"
+                //   ],
                   "properties": {
                       "token_signing_cert_file": {
                           "$id": "#/properties/certificate/properties/identity/properties/token_signing_cert_file",
@@ -479,10 +478,10 @@ const schema = {
                   }
               }
           ],
-          "required": [
-              "docker",
-              "helm"
-          ],
+        //   "required": [
+        //       "docker",
+        //       "helm"
+        //   ],
           "properties": {
               "docker": {
                   "$id": "#/properties/registries/properties/docker",
@@ -498,12 +497,12 @@ const schema = {
                           "pull_secret_value": ""
                       }
                   ],
-                  "required": [
-                      "url",
-                      "username",
-                      "password",
-                      "pull_secret_value"
-                  ],
+                //   "required": [
+                //       "url",
+                //       "username",
+                //       "password",
+                //       "pull_secret_value"
+                //   ],
                   "properties": {
                       "url": {
                           "$id": "#/properties/registries/properties/docker/properties/url",
@@ -560,11 +559,11 @@ const schema = {
                           "password": ""
                       }
                   ],
-                  "required": [
-                      "url",
-                      "username",
-                      "password"
-                  ],
+                //   "required": [
+                //       "url",
+                //       "username",
+                //       "password"
+                //   ],
                   "properties": {
                       "url": {
                           "$id": "#/properties/registries/properties/helm/properties/url",
@@ -613,11 +612,11 @@ const schema = {
                   "upd_sql_connection_str": "PLACEHOLDER"
               }
           ],
-          "required": [
-              "sql_connection_str",
-              "ta_sql_connection_str",
-              "upd_sql_connection_str"
-          ],
+        //   "required": [
+        //       "sql_connection_str",
+        //       "ta_sql_connection_str",
+        //       "upd_sql_connection_str"
+        //   ],
           "properties": {
               "sql_connection_str": {
                   "$id": "#/properties/orchestrator/properties/sql_connection_str",
@@ -664,11 +663,11 @@ const schema = {
                   "sql_connection_str": "PLACEHOLDER"
               }
           ],
-          "required": [
-              "host_admin_username",
-              "host_admin_password",
-              "sql_connection_str"
-          ],
+        //   "required": [
+        //       "host_admin_username",
+        //       "host_admin_password",
+        //       "sql_connection_str"
+        //   ],
           "properties": {
               "host_admin_username": {
                   "$id": "#/properties/identity/properties/host_admin_username",
@@ -713,9 +712,9 @@ const schema = {
                   "sql_connection_str": "PLACEHOLDER"
               }
           ],
-          "required": [
-              "sql_connection_str"
-          ],
+        //   "required": [
+        //       "sql_connection_str"
+        //   ],
           "properties": {
               "sql_connection_str": {
                   "$id": "#/properties/location/properties/sql_connection_str",
@@ -740,9 +739,9 @@ const schema = {
                   "sql_connection_str": "PLACEHOLDER"
               }
           ],
-          "required": [
-              "sql_connection_str"
-          ],
+        //   "required": [
+        //       "sql_connection_str"
+        //   ],
           "properties": {
               "sql_connection_str": {
                   "$id": "#/properties/oms/properties/sql_connection_str",
@@ -767,9 +766,9 @@ const schema = {
                   "sql_connection_str": "PLACEHOLDER"
               }
           ],
-          "required": [
-              "sql_connection_str"
-          ],
+        //   "required": [
+        //       "sql_connection_str"
+        //   ],
           "properties": {
               "sql_connection_str": {
                   "$id": "#/properties/lrm/properties/sql_connection_str",
@@ -794,9 +793,9 @@ const schema = {
                   "sql_connection_str": "PLACEHOLDER"
               }
           ],
-          "required": [
-              "sql_connection_str"
-          ],
+        //   "required": [
+        //       "sql_connection_str"
+        //   ],
           "properties": {
               "sql_connection_str": {
                   "$id": "#/properties/la/properties/sql_connection_str",
@@ -821,9 +820,9 @@ const schema = {
                   "sql_connection_str": "PLACEHOLDER"
               }
           ],
-          "required": [
-              "sql_connection_str"
-          ],
+        //   "required": [
+        //       "sql_connection_str"
+        //   ],
           "properties": {
               "sql_connection_str": {
                   "$id": "#/properties/audit/properties/sql_connection_str",
@@ -848,9 +847,9 @@ const schema = {
                   "enabled": false
               }
           ],
-          "required": [
-              "enabled"
-          ],
+        //   "required": [
+        //       "enabled"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/automation_ops/properties/enabled",
@@ -888,9 +887,9 @@ const schema = {
                                     "PLACEHOLDER"
                                 ]
                               },
-                              "required": [
-                                  "sql_connection_str"
-                              ]
+                            //   "required": [
+                            //       "sql_connection_str"
+                            //   ]
                           },
                           
                       }
@@ -911,11 +910,11 @@ const schema = {
                   "sql_connection_str": "PLACEHOLDER"
               }
           ],
-          "required": [
-              "enabled",
-              "data_sql_connection_str",
-              "sql_connection_str"
-          ],
+        //   "required": [
+        //       "enabled",
+        //       "data_sql_connection_str",
+        //       "sql_connection_str"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/insights/properties/enabled",
@@ -963,10 +962,10 @@ const schema = {
                                     "PLACEHOLDER"
                                 ]
                               },
-                              "required": [
-                                  "data_sql_connection_str",
-                                  "sql_connection_str"
-                              ]
+                            //   "required": [
+                            //       "data_sql_connection_str",
+                            //       "sql_connection_str"
+                            //   ]
                           },
                           
                       }
@@ -985,9 +984,9 @@ const schema = {
                   "enabled": false
               }
           ],
-          "required": [
-              "enabled"
-          ],
+        //   "required": [
+        //       "enabled"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/task_mining/properties/enabled",
@@ -1025,9 +1024,9 @@ const schema = {
                                     "PLACEHOLDER"
                                 ]
                               },
-                              "required": [
-                                  "sql_connection_str"
-                              ]
+                            //   "required": [
+                            //       "sql_connection_str"
+                            //   ]
                           },
                           
                       }
@@ -1046,9 +1045,9 @@ const schema = {
                   "enabled": false
               }
           ],
-          "required": [
-              "enabled"
-          ],
+        //   "required": [
+        //       "enabled"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/automation_hub/properties/enabled",
@@ -1086,9 +1085,9 @@ const schema = {
                                     "PLACEHOLDER"
                                 ]
                               },
-                              "required": [
-                                  "sql_connection_str"
-                              ]
+                            //   "required": [
+                            //       "sql_connection_str"
+                            //   ]
                           },
                           
                       }
@@ -1116,9 +1115,9 @@ const schema = {
                   }
               }
           ],
-          "required": [
-              "enabled"
-          ],
+        //   "required": [
+        //       "enabled"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/aicenter/properties/enabled",
@@ -1163,15 +1162,15 @@ const schema = {
                                         "host": "PLACEHOLDER"
                                     }
                                 ],
-                                "required": [
-                                    "username",
-                                    "password",
-                                    "ai_helper_databaseName",
-                                    "ai_pkgmanager_databaseName",
-                                    "ai_deployer_databaseName",
-                                    "ai_trainer_databaseName",
-                                    "host"
-                                ],
+                                // "required": [
+                                //     "username",
+                                //     "password",
+                                //     "ai_helper_databaseName",
+                                //     "ai_pkgmanager_databaseName",
+                                //     "ai_deployer_databaseName",
+                                //     "ai_trainer_databaseName",
+                                //     "host"
+                                // ],
                                 "properties": {
                                     "username": {
                                         "$id": "#/properties/aicenter/properties/sql/properties/username",
@@ -1245,9 +1244,9 @@ const schema = {
                                     }
                                 }
                             },
-                            "required": [
-                                "sql"
-                            ]
+                            // "required": [
+                            //     "sql"
+                            // ]
                         },
                         
                     }
@@ -1266,9 +1265,9 @@ const schema = {
                   "enabled": false
               }
           ],
-          "required": [
-              "enabled"
-          ],
+        //   "required": [
+        //       "enabled"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/test_manager/properties/enabled",
@@ -1306,9 +1305,9 @@ const schema = {
                                     "PLACEHOLDER"
                                 ]
                               },
-                              "required": [
-                                  "sql_connection_str"
-                              ]
+                            //   "required": [
+                            //       "sql_connection_str"
+                            //   ]
                           },
                           
                       }
@@ -1327,9 +1326,9 @@ const schema = {
                   "enabled": false
               }
           ],
-          "required": [
-              "enabled"
-          ],
+        //   "required": [
+        //       "enabled"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/action_center/properties/enabled",
@@ -1354,9 +1353,9 @@ const schema = {
                   "enabled": false
               }
           ],
-          "required": [
-              "enabled"
-          ],
+        //   "required": [
+        //       "enabled"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/business_apps/properties/enabled",
@@ -1381,9 +1380,9 @@ const schema = {
                   "enabled": false
               }
           ],
-          "required": [
-              "enabled"
-          ],
+        //   "required": [
+        //       "enabled"
+        //   ],
           "properties": {
               "enabled": {
                   "$id": "#/properties/document_understanding/properties/enabled",
@@ -1406,8 +1405,8 @@ const formData = {
     "servers_ips": [],
     "servers_fqdns": [],
     "agents_ips": [],
-    "ha": "",
-    "gpu_support": "",
+    "ha": false,
+    "gpu_support": false,
     "rke_token": "",
     "telemetry_optout": "",
     "certificate": {
@@ -1493,6 +1492,60 @@ const formData = {
     }
 }
 
+// const uischema = {
+//     "owner_email": {
+//         "ui:description": <div></div>
+//     },
+//     "hostname": {
+//         "ui:description": <div>Hello <a href="https://github.com/akshajbansal/argocd-example">link</a></div>
+//     },
+//     "servers_ips": {
+//         "ui:description": <div></div>
+//     },
+//     "servers_fqdns": {
+//         "ui:description": <div></div>
+//     },
+//     "agents_ips": {
+//         "ui:description": <div></div>
+//     },
+//     "ha": {
+//         "ui:description": <div></div>
+//     },
+//     "gpu_support": {
+//         "ui:description": <div></div>
+//     },
+//     "rke_token": {
+//         "ui:description": <div></div>
+//     },
+//     "certificate": {
+//         "ui:description": <div></div>
+//     },
+//     "registries": {
+//         "ui:description": <div></div>
+//     },
+//     "orchestrator": {
+//         "ui:description": <div></div>
+//     },
+//     "identity": {
+//         "ui:description": <div></div>
+//     },
+//     "location": {
+//         "ui:description": <div></div>
+//     },
+//     "oms": {
+//         "ui:description": <div></div>
+//     },
+//     "lrm": {
+//         "ui:description": <div></div>
+//     },
+//     "la": {
+//         "ui:description": <div></div>
+//     },
+//     "audit": {
+//         "ui:description": <div></div>
+//     }
+// }
+
 const log = type => console.log.bind(console, type);
 //const onSubmit = ({formData}, e) => console.log("Data submitted: ",  formData);
 //const onChange = ({formData}, e) => console.log("Data changed: ",  formData);
@@ -1530,6 +1583,16 @@ class App extends Component {
     handleChange(data) {
         this.setState({ formData: data.formData });  
     }
+    validate = (formData, errors) => {
+        const email_regex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)
+        if(!email_regex.test(formData.owner_email)){
+            errors.owner_email.addError('Email address should be of the form abc@xyz.com')
+        }
+        if(formData.hostname.length<3){
+            errors.hostname.addError('Length of Hostname should be greater than equal to 3')
+        }
+        return errors;
+    }
     render () {
       return (
         <div>
@@ -1538,6 +1601,8 @@ class App extends Component {
             <div style={{width: "60%", display: "inline-block"}}><Box border={4} borderTop={2} m={0.5} marginTop={0} paddingLeft={1} paddingBottom={0.5}><Paper style={{height: 800, overflow: 'auto'}}>
                 <div style={{width: "99%", height: "99%"}}>
                 <Form schema={schema}
+                //uiSchema={uischema}
+                validate={this.validate}
                 formData={this.state.formData}
                 onChange={this.handleChange}
                 onSubmit={this.download}
